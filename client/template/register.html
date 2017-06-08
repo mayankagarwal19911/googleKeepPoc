@@ -1,0 +1,36 @@
+<form name="userForm" ng-submit="userRegister(userForm.$valid)" novalidate>
+  <div class="container" style="width: 100% !important;">
+    <div>
+        <label><b>First Name *</b></label>
+        <input type="text" ng-model="firstname" name="firstname" required>
+        <p class="form-error" ng-show=" userForm.firstname.$invalid && !userForm.firstname.$pristine">enter first name</p>
+    </div>
+
+    <div>
+        <label><b>Last Name *</b></label>
+        <input type="text" ng-model="lastName" name="lastName" required>
+        <p class="form-error" ng-show="userForm.lastName.$invalid && !userForm.lastName.$pristine">enter last name</p>
+    </div>
+
+    <div>
+        <label><b>Email *</b></label>
+        <input type="email" ng-model="email" name="email" required>
+        <p class="form-error" ng-show="userForm.email.$invalid && !userForm.email.$pristine">enter valid email</p>
+    </div>
+
+    <div>
+        <label><b>Password *</b></label>
+        <input type="password" name="password" ng-model="password" ng-minlength="7" required>
+        <p class="form-error" ng-show="userForm.password.$error.minlength">password should be of atleast 7 characters</p>
+    </div>
+
+    <div>
+        <label><b>Confirm Password</b></label>
+        <input type="password" name="cnfrmPwd" ng-model="confirmPwd">
+        <div pwd-match></div>
+    </div>
+        
+    <button type="submit" ng-click="goTo($id)">Register</button>
+    Already have account ?  <a ng-href="#login">Click here</a>
+  </div>
+</form>

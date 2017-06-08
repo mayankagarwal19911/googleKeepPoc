@@ -1,0 +1,11 @@
+<modal-directive></modal-directive>
+<div class="box">
+    <input type="text" placeholder="Title" ng-model="title" ng-click="hide=false">
+    <p ng-hide="hide">
+        <textarea ng-model="description" placeholder="write your notes here"></textarea>
+    </p>
+    <button ng-click="addTask()">Done</button>
+</div>
+<ul>
+  <keep-directive ng-repeat="task in taskList" ng-mouseleave="hideOptions()" ng-mouseover="showOptions($index)"></keep-directive>
+</ul>
